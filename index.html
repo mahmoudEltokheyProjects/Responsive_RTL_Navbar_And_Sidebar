@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive RTL Mega Menu [ Html - Css - Js ]</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ++++++++++++++++++++++++++++++++++++ header ++++++++++++++++++++++++++++++++++++ -->
+    <header class="header">
+        <div class="container">
+            <div class="row v-center">
+                <!-- ============================ item : left : logo ============================ -->
+                <div class="header-item item-left">
+                    <div class="logo">
+                        <a href="#">الطوخي للسياحة</a>
+                    </div>
+                </div>
+                <!-- ============================ item : left : menu =========================== -->
+                <div class="header-item item-center">
+                    <!-- ++++++++++ "overlay Layer" on "navbar" ++++++++++ -->
+                    <div class="menu-overlay"></div>
+                    <nav class="menu">
+                        <!-- +++++++++++++++++++++ sidebar icons +++++++++++++++++++++ -->
+                        <!-- ///// "mobile menu" header ///// -->
+                        <div class="mobile-menu-head">
+                            <!-- Go Back icon -->
+                            <div class="go-back">
+                                <i class="fa fa-angle-left"></i>
+                            </div>
+                            <!-- current menu title -->
+                            <div class="current-menu-title"></div>
+                            <!-- close icon -->
+                            <div class="mobile-menu-close"> &times; </div>
+                        </div>
+                        <!-- ++++++++++++++++++++++++++++++++++++ navbar : <ul></ul> ++++++++++++++++++++++++++++++++++++ -->
+                        <ul class="menu-main">
+                            <!-- /////////////////////// link 1 : Home /////////////////////// -->
+                            <li>
+                                <a href="#">الرئيسية</a>
+                            </li>
+                            <!-- /////////////////////// link 2 : New /////////////////////// -->
+                            <li class="menu-item-has-children">
+                                <a href="#">البرامج السياحية <i class="fa fa-angle-down"></i> </a>
+                                <!-- megamenu : 4 column megamenu -->
+                                <div class="sub-menu mega-menu mega-menu-colum-4">
+                                    <!-- item 1 : image , h4 -->
+                                    <div class="list-item text-center">
+                                        <a href="#">
+                                            <!-- item 1 : image -->
+                                            <img src="imgs/item1.jpg" alt="New Product" />
+                                            <!-- item 1 : h4 -->
+                                            <h4 class="title"> عروض برامج وبكجات عائلية </h4>
+                                        </a>
+                                    </div>
+                                    <!-- item 2 : image , h4 -->
+                                    <div class="list-item text-center">
+                                        <a href="#">
+                                            <!-- item 2 : image -->
+                                            <img src="imgs/item2.png" alt="New Product" />
+                                            <!-- item 2 : h4 -->
+                                            <h4 class="title"> عروض شهر العسل في ماليزيا </h4>
+                                        </a>
+                                    </div>
+                                    <!-- item 3 : image , h4 -->
+                                    <div class="list-item text-center">
+                                        <a href="#">
+                                            <!-- item 3 : image -->
+                                            <img src="imgs/item3.png" alt="New Product" />
+                                            <!-- item 3 : h4 -->
+                                            <h4 class="title"> بكجات سياحية متنوعه </h4>
+                                        </a>
+                                    </div>
+                                    <!-- item 4 : image , h4 -->
+                                    <div class="list-item text-center">
+                                        <a href="#">
+                                            <!-- item 4 : image -->
+                                            <img src="imgs/item4.png" alt="New Product" />
+                                            <!-- item 4 : h4 -->
+                                            <h4 class="title">مواصلات وجولات</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- /////////////////////// link 3 : Shop /////////////////////// -->
+                            <li class="menu-item-has-children">
+                                <a href="#">الاماكن والمدن السياحية <i class="fa fa-angle-down"></i> </a>
+                                <!-- +++++++++ mega menu : multi-column +++++++++ -->
+                                <div class="sub-menu mega-menu mega-menu-colum-4">
+                                    <!-- ********* Column 1 : Men's Fashion ********* -->
+                                    <div class="list-item">
+                                        <!--  Column 1  : sub-item 1  -->
+                                        <h4 class="title">الهضاب و المرتفعات</h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>مرتفعات جنتنج هايلاند في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>جزيرة ريدانج في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> جورج تاون بينانج </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>بوترا جايا ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>منتجع افاموسى في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>ولاية صباح في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> ولاية سيلانجورفي ماليزيا</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>مجمع رصيف بوينت دوتو</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- ********* Column 2 : Children's Fashion *********-->
+                                    <div class="list-item">
+                                        <!-- Column 2 : sub-item 1 -->
+                                        <h4 class="title"> الاسواق و الاماكن الاثارية </h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span> هضبة بينانج في جزيزة بينانج ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> معبد الباتوكيف الهندي في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> بورت دكسون ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> افضل خمس فنادق في كوالالمبور </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> الاسواق الاكثر شهرة في بينانج </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>  البيت المقلوب في جزيرة بينانج ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> الاسواق و المولات الاكثر شهرة في كوالالمبور </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> الجسر السماوي بين البرجين التؤامين</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- ********* Column 3 : Home , Kitchen ********* -->
+                                    <div class="list-item">
+                                        <h4 class="title">الجبال و الفنادق </h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>اشهر مناطق التسوق في سلانجور</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>مدينة الاضواء و الجليد في سلانجور ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> الجولات السياحية في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> سفاري افاموسا مالاكا ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> افضل 5 مناطق جذبا للزوار في كوالالمبور ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> 
+                                                        مشاركة شركة السقاف في معرض دبي الدولي مع وزارة السياحة و الوزير
+                                                        السياحي الماليزي. 
+                                                    </span>  
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span> اشهر خمس مباني دينية في ماليزيا </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>التلفريك في جزيرة لنكاوي ماليزيا </span> 
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item">
+                                        <img src="imgs/shop1.jpg" alt="shop">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- /////////////////////// link4 : Blog : mega menu /////////////////////// -->
+                            <li class="menu-item-has-children">
+                                <a href="#">المواصلات والجولات <i class="fa fa-angle-down"></i> </a>
+                                <!-- mega menu : single-column -->
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li> <a href="#">مواصلات وجولات سيلانجور</a> </li>
+                                        <li> <a href="#">مواصلات وجولات كوالالمبور</a> </li>
+                                        <li> <a href="#">واصلات وجولات لنكاوي</a> </li>
+                                        <li> <a href="#">مواصلات وجولات كاميرون هايلاند</a></li>
+                                        <li> <a href="#">اسعار تذاكر الأماكن السياحية في ماليزيا</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- /////////////////////// link5 : pages : mega menu /////////////////////// -->
+                            <li class="menu-item-has-children">
+                                <a href="#">فنادق ماليزيا <i class="fa fa-angle-down"></i> </a>
+                                <!-- mega menu : single-column -->
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li><a href="#">فنادق سيلانجور</a></li>
+                                        <li><a href="#">فنادق كولالمبور</a></li>
+                                        <li><a href="#">فنادق لانكاوي</a></li>
+                                        <li><a href="#">فنادق بينانج</a></li>
+                                        <li><a href="#">فنادق كاميرون هايلاند</a></li>
+                                        <li><a href="#">فنادق رجال الأعمال</a></li>
+                                        <li><a href="#">فنادق ملاكا و بورت ديكسون</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- /////////////////////// link6 : Contact /////////////////////// -->
+                            <li class="menu-item-has-children">
+                                <a href="#">الحجوزات والاستشارات<i class="fa fa-angle-down"></i> </a>
+                                <!-- mega menu : single-column -->
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li><a href="#">طلب حجز</a></li>
+                                        <li><a href="#">طريقة الحجز والدفع</a></li>
+                                        <li><a href="#">الدفع اونلاين</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                             <!-- /////////////////////// link7 : Contact /////////////////////// -->
+                             <li class="menu-item-has-children">
+                                <a href="#">عن الشركة<i class="fa fa-angle-down"></i> </a>
+                                <!-- mega menu : single-column -->
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li><a href="#">من نحن</a></li>
+                                        <li><a href="#">وثائق الشركه</a></li>
+                                        <li><a href="#">خدماتنا</a></li>
+                                        <li><a href="#">قالوا عنا</a></li>
+                                        <li><a href="#">فروعنا</a></li>
+                                        <li><a href="#">تواصل معنا</a></li>
+                                        <li><a href="#">Terms &amp; Condition</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- ============================ item : right ============================ -->
+                <div class="header-item item-right">
+                    <!-- ++++++++++++ search icon ++++++++++++ -->
+                    <a href="#"> <i class="fa fa-search"></i> </a>
+                    <!-- ++++++++++++ heart icon +++++++++++++ -->
+                    <a href="#"> <i class="fa fa-heart"></i> </a>
+                    <!-- ++++++++++++ shopping icon ++++++++++ -->
+                    <a href="#"> <i class="fa fa-shopping-cart"></i> </a>
+                    <!-- ++++++++++ menubar button +++++++++++ -->
+                    <div class="mobile-menu-trigger">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- jquery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- script js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

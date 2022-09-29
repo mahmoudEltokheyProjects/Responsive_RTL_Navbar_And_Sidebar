@@ -1,0 +1,573 @@
+* 
+{
+    margin: 0 ;
+    padding: 0 ; 
+    box-sizing: border-box ;
+}
+::before , ::after
+{
+    box-sizing: border-box ;
+}
+body
+{
+    font-family: "Noto Kufi Arabic",helvetica,sans-serif ;
+    line-height: 1.5 ;
+    font-weight: 400 ;
+    overflow-x: hidden;
+}
+.container
+{
+    max-width: 1200px ;
+    /* background-color: #f00;  */
+    margin: auto ;
+}
+.row
+{
+    display: flex ;
+    flex-wrap: wrap;
+}
+.v-center
+{
+    align-items: center;
+}
+.text-center
+{
+    text-align: center;
+}
+ul
+{
+    list-style: none ;
+}
+a
+{
+    text-decoration: none ;
+    color: #000;
+}
+/* ++++++++++++++++++++++++++++++++++++ header ++++++++++++++++++++++++++++++++++++ */
+.header
+{
+    position: relative ;
+    display: block;
+    width: 100% ;
+    z-index: 99 ;
+    padding: 15px ; 
+    /* border: 2px solid #f00 ;  */
+}
+/* ==================================================== left item : Logo ==================================================== */
+.header .item-left
+{
+    flex: 0 0 10% ;
+    /* border: 2px solid #0f0;      */
+}
+.header .item-left  .logo   a
+{
+    font-size: 20px ;
+    font-weight: 500;
+    color: #000 ;
+}
+/* ==================================================== center item : Links ==================================================== */
+.header .item-center
+{
+    flex: 0 0 78% ;
+    /* background-color: #00f;  */
+}
+/* ++++++++++ "overlay Layer" on "navbar" ++++++++++ */
+.menu-overlay
+{
+    position: fixed;
+    left: 0 ;
+    top: 0 ;
+    display: block ;
+    width: 100%;
+    height: 100%;
+    z-index: 1098 ;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden ;
+    opacity: 0 ;
+    transition: all 0.5s ease ;
+}
+/* when "Overlay Layer" Contains "active" class , Appear it  */
+.menu-overlay.active
+{
+    visibility: visible ;
+    opacity: 1 ;   
+}
+/* All direct <li></li> in header */
+.header .menu > ul > li
+{
+    display: inline-block ;    
+    margin-right: 25px ;      /* change rtl */
+    line-height: 50px ; 
+    /* border: 2px solid #f00;  */
+}
+/* All direct <a></a> in header */
+.header .menu > ul > li > a
+{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 14px ;
+    font-weight: 500 ;
+    color: #000;
+    /* border: 2px solid #f00;          */
+    transition: color 0.3s ease;
+}
+/* When hover on All direct <li></li> change all direct <a></a> in header */
+.header .menu  a                       , 
+/* When Hover on All direct <a></a> inside "sub-menu" in header */
+.header .menu > ul > li:hover > a  ,
+/* When Hover on All direct <a></a> inside "sub-menu" in header */
+.header .menu > ul > li .sub-menu > ul > li > a:hover
+{
+    color: #ea4636;
+}
+/* All direct <li></li> that contain "sub-menu" in header */
+.header .menu > ul > li .sub-menu
+{
+    position: absolute;
+    z-index: 500 ; 
+    background-color: #fff ;
+    box-shadow: -2px -2px 70px -25px rgba(0, 0, 0, 0.3);  /* change rtl */
+    padding: 20px 30px ;    
+    margin-top: 25px ; 
+    /* hide mega-menu */
+    visibility: hidden ;
+    opacity: 0 ;
+    transition: all 0.5s ease;
+    /* border: 2px solid #f0f;  */
+}
+/* +++++++++++++ Single Column Megamenu +++++++++++++ */
+/* All direct <li></li> that contain "single-column-menu" in header */
+.header .menu > ul > li .single-column-menu
+{
+    min-width: 280px ;
+    max-width: 350px ;   
+}
+/* +++++++++++++ Multi-Columns Megamenu +++++++++++++ */
+.header .menu > ul > li .sub-menu.mega-menu 
+{
+    left: 50% ;                      /* change rtl */ 
+    transform: translateX(-50%);  
+}
+/* All <li></li> inside "list-item" of "mega-menu" */
+.header .menu > ul > li .sub-menu.mega-menu .list-item > ul > li
+{
+    display: block;
+    line-height: 1 ;
+    /* border : 2px solid #0ff;   */
+}
+.header .menu > ul > li .sub-menu.mega-menu .list-item > ul > li  a
+{
+    display: block ;
+    padding: 15px 0px ; 
+    font-size: 15px ;
+    color: #555 ;
+    /* border: 2px solid #0ff;   */
+    transition: color 0.3s ease ;
+}
+.header .menu > ul > li .sub-menu.mega-menu .list-item > ul > li  a:hover
+{
+    background-color: #ea4636 ;
+    color: #fff ;
+}
+/* all direct <li></li> that have megamenu with class "mega-menu-colum-4" */
+.header .menu > ul > li .sub-menu.mega-menu-colum-4
+{
+    display: flex;
+    flex-wrap: wrap ;
+    max-width: 1100px ;
+    width: 100% ;
+    padding: 20px 0px ; 
+    /* border : 2px solid #00f;   */
+}
+/* All direct "list-item" inside "multi-column megamenu */
+.header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item
+{
+    /* we have 4 column inside megamenu , each column has width=25% */
+    flex: 0 0 25% ;
+    padding: 0 15px ;  
+    /* border : 2px solid #0f0;   */
+}
+/* "h4" of all direct "list-item" inside "multi-column megamenu */
+.header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item .title
+{
+    font-size: 14px ;
+    color: #ea4636;
+    font-weight: 500 ;
+    line-height: 1 ;
+    padding: 10px 0px ;
+}
+/* "image" of all direct "list-item" inside "multi-column megamenu */
+.header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item img
+{
+    max-width: 100% ;
+    width: 100% ;
+    /* To centeralize image */
+    vertical-align: middle ;
+    /* border: 2px solid #0ff ;  */
+}
+/* All direct <li></li> inside "sub-menu" in header */
+.header .menu > ul > li .sub-menu > ul > li
+{
+    line-height: 1 ;
+    /* border : 2px solid #ff0;   */
+}
+/* All direct <a></a> inside "sub-menu" in header */
+.header .menu > ul > li .sub-menu > ul > li > a
+{
+    display: inline-block ;
+    padding: 15px 0 ; 
+    font-size: 12px ;
+    color: #555 ;
+    /* border : 2px solid #00f;   */
+    transition: color 0.3s ease ;
+}
+ /* All direct <li> <a> <i></i> </a> </li> in header */
+ .header .menu > ul > li > a  i
+{
+    margin-right: 8px ;
+    font-size: 20px ;
+    font-weight: bold ;
+    vertical-align: middle;
+}
+/* All <span></span> of All direct <a></a> inside "sub-menu" in header */
+.header .menu > ul > li .sub-menu > ul > li > a  span ,
+.header .menu > ul > li .sub-menu.mega-menu .list-item > ul > li > a    span
+{
+    display: block ;
+    font-size: 12px ;
+    line-height: 1.8 ; 
+    /* border: 2px solid #ff0;  */
+} 
+/* ============================================================ right item ==================================================== */
+.header .item-right
+{
+    flex: 0 0 10% ;
+    display: flex ;
+    justify-content: flex-end ;     /* change rtl */
+    /* background-color: #ff0;  */
+}
+.header .item-right  a
+{
+    display: inline-block;
+    font-size: 16px ;
+    color: #555 ;
+    margin-right: 10px ;        /* change rtl */
+    transition: color 0.3s ease ;
+}
+/* When Hover on All <a></a> inside ".item-right " in header */
+.header .item-right  a:hover
+{
+    color: #ea4636;
+}
+/* ++++++++++++++++++ mobile screen elements ++++++++++++++++ */
+/* +++++++++++++ sidebar +++++++++++ */ 
+.mobile-menu-trigger  ,
+/* "mobile menu" header */
+.mobile-menu-head
+{
+    display: none ;   
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Responsive !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  */
+/* ++++++++ Mobile Screen ++++++++ */
+@media ( min-width:992px ) 
+{
+    /* When Hover on "New" , "Shop" , "Blog" , "Pages" link , Appear "megamenu" */
+    .header .menu > ul > li.menu-item-has-children:hover .sub-menu
+    {
+        margin-top: 0 ;
+        /* show mega-menu */
+        visibility: visible ;
+        opacity: 1 ;
+    }
+}
+/* ++++++++ Tablet Screen ++++++++ */
+@media( max-width:991px )
+{
+    /* ************************ navbar links : center : menu ************************ */
+    .header .menu
+    {
+        position: fixed ;
+        top: 0 ;
+        right: 0 ;                       /* change rtl */
+        width: 320px ;
+        height: 100% ;
+        overflow: hidden ;
+        background-color: #fff ;
+        /* --------- Hide "SideBar" --------- */
+        transform: translate(100%);
+        z-index: 1099 ;
+        transition: all 0.5s ease ;
+    }
+    .header .menu.active
+    {
+        /* --------- Show "SideBar" --------- */
+        transform: translate(0%);
+    }
+    /* +++++++++++++++++++++++ navbar : <ul></ul> +++++++++++++++++++++++ */
+    .header .menu  .menu-main
+    {
+        height: 100% ;
+        overflow-x: hidden ;
+        overflow-y: auto ;
+    }
+    /* All direct <li></li> in header */
+    .header .menu > ul > li
+    {
+        display: block ;
+        margin: 0 ;
+        line-height: 1 ;
+    }
+    /* ++++++++++ "New" , "Shop" , "Blog"   , "Pages" : megamenus ++++++++++ */
+    .header .menu > ul > li .sub-menu ,
+    .header .menu > ul > li .sub-menu.mega-menu
+    {
+        display: none ; 
+        position: absolute; 
+        top: 0 ;
+        left: 0 ;
+        width: 100% ;
+        min-width: auto ;
+        max-width: none;
+        height: 100% ;
+        overflow-y: auto ;
+        box-shadow: none ;
+        visibility: visible;
+        opacity: 1 ;
+        margin: 0 ;
+        padding: 15px ;
+        padding-top: 65px ;
+        transform: translateX(0%);
+        /* background-color:gray ;  */
+        /* border: 3px solid #ff0 ;   */
+    }
+    /* Active megamenu :  اللي ضغطت عليها حاليا وهي حاليا ظاهرة megamenu اللي ال  */
+    .header .menu > ul > li .sub-menu.active           ,
+    .header .menu > ul > li .sub-menu.mega-menu.active
+    {
+        display: block;
+    }
+    /* +++++++++++++++++++++++++ SlideLeft Animation +++++++++++++++++++++++++ */
+    @keyframes SlideLeft
+    {
+        0%
+        {
+            opacity: 1 ;
+            transform: translateX(0%);
+        }
+        100%
+        {
+            opacity: 0 ;
+            transform: translateX(100%);   
+        }
+    }
+    /* +++++++++++++++++++++++++ slideRight Animation +++++++++++++++++++++++++ */
+    @keyframes slideRight
+    {
+        0%
+        {
+            opacity: 0 ;
+            transform: translateX(100%);
+        }
+        100%
+        {
+            opacity: 1 ;
+            transform: translateX(0%);   
+        }
+    }
+    
+    /* .header .menu > ul > li .single-column-menu
+    {
+        min-width: 0px ;
+        max-width: 0px ;
+        width: 100% ;
+    } */
+    /* each "Column" in the "4 column megamenu"   */
+    .header .menu > ul > li .sub-menu.mega-menu-colum-4 
+    {
+        display: none ; 
+        /* border: 2px solid #000 ;   */
+    }
+    /* all <img> in each "Column" in the "4 column megamenu"   */
+    .header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item    img
+    {
+        margin-top: 0 ;
+    }
+    /* all <h4></h4> in each "Column" in the "4 column megamenu"   */
+    .header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item.text-center .title
+    {
+        margin-bottom: 20px ; 
+    }
+    /* each "Column" in the "4 column megamenu"   */
+    .header .menu > ul > li .sub-menu.mega-menu-colum-4 > .list-item
+    {
+        /* each column of megamenu "width = 100%" */
+        flex: 0 0 100% ;
+        padding: 0 ; 
+        /* border: 2px solid #f0f; */
+    }
+    .header .menu > ul > li .sub-menu.mega-menu .list-item > ul
+    {
+        margin-bottom: 15px ;
+        /* border: 5px solid #00f ;   */
+    }
+    /* all <a></a> of <li></li> of links "Blog" , "Pages" */
+    .header .menu > ul > li .sub-menu > ul > li > a     ,
+    /* all <a></a> of <li></li> of links of megamenu "Men's Fashion" , "Beauty" , "Children's Fashion" , "Furnitures" */
+    .header .menu > ul > li .sub-menu.mega-menu .list-item > ul > li > a
+    {
+        display: block ;
+        padding: 15px 0 ; 
+    }
+    /* All direct <li> <a></a> </li> in header */
+    .header .menu > ul > li > a
+    {
+        display: block;
+        height: 50px ;
+        line-height: 50px ;
+        margin: 0  ;
+        padding: 0 50px 0px 15px  ; 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* border: 2px solid #f00;  */
+    }
+    /* All direct <li> <a> <i></i> </a> </li> in header */
+    .header .menu > ul > li > a  i
+    {
+        position: absolute ;
+        top: 0 ;
+        left: 0 ;           /* change rtl */
+        width: 56px ;
+        height: 50px ;
+        line-height: 50px ;
+        text-align: center ;
+        font-size: 18px ;
+        font-weight: bold ;
+        transform: rotate(90deg); 
+    }
+    /* =================== item : right : menu =================== */
+    .header .item-right
+    {
+        align-items: center;
+    }
+    /* =================== item : left : menu =================== */
+    /* =================== item : right : menu =================== */
+    .header .item-left , 
+    .header .item-right 
+    {
+        flex: 0 0 auto ; 
+        /* border: 2px solid #0ff;  */
+    }
+    /* To Centeralize "left","right" part */
+    .v-center
+    {
+        justify-content: space-between;
+    }
+    /* =================== item : center : menu =================== */
+    .header .item-center
+    {
+        /* move the center part of navbar "navbar links" to the "right part" where "order = 3" */
+        /* "order=1" will move the "part" to "next" , "order=-1" will move the "part" to "previous" , "order=0" no move */
+        order: 3 ;
+        /* make the "navbar links" take all the "row2" */
+        flex: 0 0 100% ;
+        /* border: 2px solid #f0f;  */
+    }
+    /* ++++++++++ menubar button +++++++++++ */ 
+    .mobile-menu-trigger
+    {
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        width: 30px ;
+        height: 30px ;
+        margin-right: 15px ;   /* change rtl */
+        cursor: pointer;
+        /* border: 1px solid #444 ;  */
+    }
+    /* menubar button : bars  */
+    .header .mobile-menu-trigger span
+    {
+        position: relative;
+        display: block ;
+        width: 24px ;
+        height: 2px ;
+        background-color: #333 ;
+    }   
+     /* menubar button : "top" , "bottom" bar  */
+     .header .mobile-menu-trigger span::before ,
+     .header .mobile-menu-trigger span::after
+     {
+        content: "";
+        position: absolute;
+        left: 0 ;       /* change rtl */
+        width: 100%;
+        height: 100% ;
+        background-color: #333 ;
+     }
+      /* menubar button : "top" bar  */
+      .header .mobile-menu-trigger span::before 
+      {
+        top: -6px ;
+      }
+       /* menubar button : "bottom" bar  */
+     .header .mobile-menu-trigger span::after
+     {
+        top: 6px ;
+     }
+     /* ++++++++++++++++++++ sidebar +++++++++++++++++++++ */ 
+    /* "mobile menu" header */
+    .header .header-item   .mobile-menu-head
+    {
+        position: sticky; 
+        top: 0 ;
+        display: flex ;   
+        justify-content: space-between ;
+        align-items: center;
+        height: 50px ;
+        font-size: 22px ;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 5012 ;
+        background-color: #fff ;
+        /* border: 2px solid #f0f ;   */
+    }
+    /* "Go Back" icon */
+    .header .header-item   .mobile-menu-head    .go-back
+    {
+        display: none ;
+        width: 50px ;
+        height: 50px ;
+        line-height: 50px ;
+        cursor: pointer;
+        text-align: center;
+        color: #000 ;
+        font-size: 20px ;
+        border-left: 1px solid rgba(0,0,0,0.1);  /* change rtl */
+        /* border: 2px solid #f00 ;  */
+    }
+    /* "go back icon" فهيظهر لك ال megaMenu لما يتم الضغط علي لينك من اللينكات اللي بتحتوي */
+    .header .header-item   .mobile-menu-head.active .go-back
+    {
+
+        display: block;
+    }
+    /* "current menu" title */
+    .header .header-item   .mobile-menu-head   .current-menu-title
+    {
+        font-size: 16px ;
+        font-weight: 500 ;
+        color: #000 ;
+        /* border: 2px solid #0f0 ;  */
+    }
+    /* "close" icon */
+    .header .header-item   .mobile-menu-head   .mobile-menu-close
+    {
+        width: 50px ;
+        height: 50px ;
+        line-height: 50px ;
+        text-align: center ;
+        color: #000;
+        font-size: 25px ;
+        cursor: pointer;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);       /* change rtl */
+        /* border: 2px solid #00f ;  */
+    }
+}
